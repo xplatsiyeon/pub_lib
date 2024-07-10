@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import Header from "@/component/layout/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Sans_KR({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Publishing Library",
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={inter.className}>{children}</body>
+      <body className={noto.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
