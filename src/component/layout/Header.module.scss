@@ -1,0 +1,55 @@
+@use "../../theme/index" as theme;
+
+.header {
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navList {
+      box-sizing: border-box;
+      @include theme.rowFlex($gap: 20px);
+
+      .navItem {
+        position: relative;
+        @include theme.paddingX($padL: 10px, $padR: 10px);
+        @include theme.paddingY($padTop: 4px, $padBot: 4px);
+        color: theme.$primary;
+        font-size: theme.$fontlg;
+        font-weight: theme.$weightlg;
+      }
+
+      .navItem::after {
+        position: absolute;
+        content: "";
+        width: calc(100% - 30px);
+        transform: scaleX(0);
+        height: 2px;
+        left: 15px;
+        bottom: 0;
+        background-color: theme.$primary;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .navItem:hover {
+        background-color: rgba($color: theme.$accent, $alpha: 0.2);
+        border-radius: 50px;
+        transition: all 1s;
+      }
+
+      .navItem:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+}

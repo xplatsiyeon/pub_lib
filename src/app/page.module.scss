@@ -1,0 +1,22 @@
+@use "../theme/index" as theme;
+
+.mainWrapper {
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  @include theme.padding($padTop: 100px, $padL: 5%, $padR: 5%, $padBot: 100px);
+  @include theme.colFlex($align: flex-start, $justify: flex-start, $gap: 20px);
+  color: theme.$primary;
+  background-color: rgba($color: theme.$accent, $alpha: 0.2);
+
+  .title {
+    font-size: theme.$fontxl;
+    font-weight: theme.$weightxl;
+    @include theme.slideUp($delay: 0.1s);
+  }
+
+  .mainText {
+    font-size: theme.$fontlg;
+    line-height: 2;
+    @include theme.slideUp($delay: 0.4s);
+  }
+}
