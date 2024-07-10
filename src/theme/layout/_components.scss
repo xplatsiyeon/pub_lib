@@ -1,0 +1,6 @@
+// 버튼 믹스인
+@mixin btn($border: 1px solid #000, $radius: 50px, $bgColor) {
+  border: $border;
+  border-radius: $radius;
+  background-color: $bgColor;
+}

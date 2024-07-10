@@ -1,0 +1,85 @@
+// 페이드인 애니메이션
+@mixin fadeIn($duration: 1s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: fadeIn $duration $timingFunction $delay;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// 아래에서 위로 슬라이드 되는 애니메이션(opacity: 0 => 1)
+@mixin slideUp($duration: 0.5s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: slideUp $duration $timingFunction $delay;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 위에서 아래로 슬라이드 되는 애니메이션(opacity: 0 => 1)
+@mixin slideDown($duration: 0.5s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: slideDown $duration $timingFunction $delay;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 왼쪽에서 오른쪽로 슬라이드 되는 애니메이션(opacity: 0 => 1)
+@mixin slideLeft($duration: 0.5s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: slideLeft $duration $timingFunction $delay;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 오른쪽에서 왼쪽으로 슬라이드 되는 애니메이션(opacity: 0 => 1)
+@mixin slideRight($duration: 0.5s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: slideRight $duration $timingFunction $delay;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

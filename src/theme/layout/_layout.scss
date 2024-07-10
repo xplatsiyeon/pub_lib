@@ -1,0 +1,69 @@
+// 가로 flex 믹스인
+@mixin rowFlex(
+  $justify: space-between,
+  $align: center,
+  $wrap: nowrap,
+  $gap: 5%
+) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// 세로 flex 믹스인
+@mixin colFlex(
+  $justify: space-between,
+  $align: center,
+  $wrap: nowrap,
+  $gap: 5%
+) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// 전체 마진 설정
+@mixin margin($marTop, $marBot, $marL, $marR) {
+  margin-top: $marTop;
+  margin-bottom: $marBot;
+  margin-left: $marL;
+  margin-right: $marR;
+}
+
+// 상하 마진 설정
+@mixin marginX($marL, $marR) {
+  margin-left: $marL;
+  margin-right: $marR;
+}
+
+// 좌우 마진 설정
+@mixin marginY($marTop, $marBot) {
+  margin-top: $marTop;
+  margin-bottom: $marBot;
+}
+
+// 전체 패딩 설정
+@mixin padding($padTop, $padBot, $padL, $padR) {
+  padding-top: $padTop;
+  padding-bottom: $padBot;
+  padding-left: $padL;
+  padding-right: $padR;
+}
+
+// 상하 패딩 설정
+@mixin paddingX($padL, $padR) {
+  padding-left: $padL;
+  padding-right: $padR;
+}
+
+// 좌우 패딩 설정
+@mixin paddingY($padTop, $padBot) {
+  padding-top: $padTop;
+  padding-bottom: $padBot;
+}
