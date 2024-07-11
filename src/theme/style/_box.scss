@@ -1,0 +1,7 @@
+// border 믹스인
+@mixin border($width: 1px, $style: solid, $color: #000, $radius: 5px) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+  border-radius: $radius;
+}
