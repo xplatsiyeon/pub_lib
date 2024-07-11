@@ -1,0 +1,12 @@
+@use "../theme/index" as theme;
+
+.notFoundWrapper {
+  height: calc(100vh - 80px);
+  @include theme.colFlex($justify: center, $gap: 10px);
+
+  p {
+    color: theme.$primary;
+    font-size: 32px;
+    font-weight: theme.$weightxl;
+  }
+}
