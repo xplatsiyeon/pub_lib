@@ -1,12 +1,18 @@
 @use "../../theme/index" as theme;
 
 .header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
   height: 80px;
   margin: 0 auto;
   padding: 0 5%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
+  background-color: theme.$white;
 
   .nav {
     width: 100%;
