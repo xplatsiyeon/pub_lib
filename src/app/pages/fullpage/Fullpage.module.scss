@@ -1,0 +1,57 @@
+@use "../../../theme/index" as theme;
+
+.fullWrapper {
+  position: relative;
+}
+
+.curText {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: theme.$fontlg;
+  font-weight: theme.$weightlg;
+}
+
+.mainText {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  font-size: theme.$fontmd;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  @include theme.colFlex($gap: 8px);
+
+  button {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: theme.$secondary;
+
+    &.active {
+      background-color: skyblue;
+    }
+  }
+}
+
+.outer {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.outer::-webkit-scrollbar {
+  display: none;
+}
+
+.inner {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
