@@ -1,0 +1,14 @@
+@use "../theme/index" as theme;
+
+.oneSwiper {
+  @include theme.border;
+  height: 100px;
+  padding: 20px;
+
+  .swiperItem {
+    @include theme.rowFlex($justify: center);
+    padding: 20px;
+    font-size: theme.$fontxl;
+    cursor: pointer;
+  }
+}
