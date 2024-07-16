@@ -285,3 +285,38 @@ input[type="number"]::-webkit-outer-spin-button {
   letter-spacing: -0.03em;
   color: #ccc;
 }
+
+/* 스와이퍼 페이지 */
+
+.oneSwiper .swiper-button-prev,
+.oneSwiper .swiper-button-next {
+  color: gray;
+}
+
+.oneSwiper .swiper-button-prev::after,
+.oneSwiper .swiper-button-next::after {
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.oneSwiper .swiper-pagination {
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.oneSwiper .swiper-pagination .swiper-pagination-bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  opacity: 0.7;
+  border-radius: 100%;
+}
+
+.oneSwiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #aaa;
+}
