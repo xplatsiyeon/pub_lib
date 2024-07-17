@@ -1,0 +1,5 @@
+@use "../theme/index" as theme;
+
+.swiperWrapper {
+  @include theme.colFlex($align: inherit, $gap: 20px);
+}
