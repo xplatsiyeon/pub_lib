@@ -1,0 +1,25 @@
+@use "../theme/index" as theme;
+
+.multipleSwiper {
+  @include theme.border;
+  height: 330px;
+  padding: 32px 60px;
+
+  .swiperItem {
+    @include theme.rowFlex($justify: center);
+    border-radius: 20px;
+    font-size: theme.$fontlg;
+    font-weight: theme.$weightlg;
+    color: theme.$white;
+  }
+
+  div::after {
+    color: #aaa;
+    font-size: 30px;
+  }
+
+  span {
+    width: 10px;
+    height: 10px;
+  }
+}
