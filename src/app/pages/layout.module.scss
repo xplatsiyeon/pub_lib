@@ -41,9 +41,20 @@
           }
         }
 
+        .active {
+          color: theme.$white;
+          background-color: theme.$primary;
+        }
+
         .menuItem:hover {
-          background-color: rgba($color: theme.$primary, $alpha: 0.2);
+          color: #fff;
+          background-color: rgba($color: theme.$primary, $alpha: 0.3);
           transition: background-color 0.2s;
+        }
+
+        .active:hover {
+          color: theme.$white;
+          background-color: theme.$primary;
         }
 
         .prevBtn,
