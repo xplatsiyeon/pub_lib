@@ -1,0 +1,40 @@
+@use "../theme/index" as theme;
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  & .Box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-size: theme.$fontlg;
+      font-weight: 500;
+    }
+
+    p {
+      color: theme.$primary;
+      font-size: theme.$font2xl;
+      font-weight: 700;
+    }
+  }
+
+  & .Up p {
+    @include theme.slideUp($duration: 0.7s);
+  }
+
+  & .Down p {
+    @include theme.slideDown($duration: 0.7s);
+  }
+
+  & .Left p {
+    @include theme.slideLeft($duration: 0.7s);
+  }
+
+  & .Right p {
+    @include theme.slideRight($duration: 0.7s);
+  }
+}

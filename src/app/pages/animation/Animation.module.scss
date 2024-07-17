@@ -1,0 +1,5 @@
+@use "../theme/index" as theme;
+
+.aniWrapper {
+  @include theme.colFlex($align: inherit, $gap: 40px);
+}

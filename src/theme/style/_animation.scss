@@ -12,6 +12,21 @@
   }
 }
 
+// 페이드아웃 애니메이션
+@mixin fadeOut($duration: 1s, $timingFunction: ease-in-out, $delay: 0s) {
+  animation: fadeOut $duration $timingFunction $delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 // 아래에서 위로 슬라이드 되는 애니메이션(opacity: 0 => 1)
 @mixin slideUp($duration: 0.5s, $timingFunction: ease-in-out, $delay: 0s) {
   animation: slideUp $duration $timingFunction $delay;
@@ -81,5 +96,19 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+// 무한 회전하는 애니메이션
+@mixin infiniteRotate($duration: 6s) {
+  animation: infiniteRotate infinite forwards $duration linear;
+}
+
+@keyframes infiniteRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

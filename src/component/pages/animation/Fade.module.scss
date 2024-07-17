@@ -1,0 +1,32 @@
+@use "../theme/index" as theme;
+
+.fade {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  & .Box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-size: theme.$fontlg;
+      font-weight: 500;
+    }
+
+    p {
+      color: theme.$primary;
+      font-size: theme.$font2xl;
+      font-weight: 700;
+    }
+  }
+
+  & .In p {
+    @include theme.fadeIn;
+  }
+
+  & .Out p {
+    @include theme.fadeOut;
+  }
+}
