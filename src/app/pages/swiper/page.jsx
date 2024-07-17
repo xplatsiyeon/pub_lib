@@ -12,7 +12,7 @@ export default function Swiper() {
         <OneSwiper />
       </article>
       <article className="multipleSwiper">
-        <h2>멀티플 스와이퍼(컨텐츠 여러개씩 보이기)</h2>
+        <h2>멀티플 스와이퍼(컨텐츠 여러개씩 보이기, loop)</h2>
         <MultipleSwiper />
       </article>
     </div>

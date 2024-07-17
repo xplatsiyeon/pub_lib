@@ -12,7 +12,7 @@ export default function Loop() {
         <ImageLoop />
       </article>
       <article className="textLoop">
-        <h2>텍스트 무한 루프</h2>
+        <h2>텍스트 무한 루프(우-&gt;좌, 좌-&gt;우)</h2>
         <TextLoop />
       </article>
     </div>

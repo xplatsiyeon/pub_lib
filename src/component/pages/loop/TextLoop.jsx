@@ -1,5 +1,6 @@
 import classes from "./TextLoop.module.scss";
 
+import { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
@@ -36,7 +37,7 @@ const contentArrMiddle = [
 
 export default function ImageLoop() {
   return (
-    <>
+    <Fragment>
       <Swiper
         className={classes.textLoop}
         modules={[Autoplay]}
@@ -78,6 +79,6 @@ export default function ImageLoop() {
           );
         })}
       </Swiper>
-    </>
+    </Fragment>
   );
 }
