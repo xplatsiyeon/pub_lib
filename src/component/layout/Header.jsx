@@ -14,9 +14,9 @@ export default function Header() {
           <li className={classes.navItem}>
             <a href="/pages">페이지</a>
           </li>
-          <li className={classes.navItem}>
+          {/* <li className={classes.navItem}>
             <a href="/layout">레이아웃</a>
-          </li>
+          </li> */}
           <li className={classes.navItem}>
             <a href="/components">컴포넌트</a>
           </li>
