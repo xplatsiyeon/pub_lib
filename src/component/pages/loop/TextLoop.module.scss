@@ -1,0 +1,28 @@
+@use "../theme/index" as theme;
+
+.textLoop {
+  div {
+    transition-timing-function: linear;
+    align-items: center;
+
+    .swiperItem {
+      font-size: 40px;
+      width: fit-content;
+
+      p {
+        color: theme.$gray;
+        font-weight: theme.$weightsm;
+        span {
+          color: theme.$primary;
+          font-weight: theme.$weightmd;
+        }
+      }
+    }
+  }
+}
+
+.rtl {
+  p {
+    direction: initial;
+  }
+}
