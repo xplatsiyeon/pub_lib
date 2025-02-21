@@ -1,0 +1,111 @@
+@use "../theme/index" as theme;
+
+.componentsWrapper {
+  box-sizing: border-box;
+  min-height: calc(100vh - 80px);
+  @include theme.padding($padTop: 40px, $padL: 2%, $padR: 2%, $padBot: 40px);
+  background-color: rgba($color: theme.$accent, $alpha: 0.2);
+
+  .componentsTitle {
+    font-size: 32px;
+    font-weight: theme.$weightxl;
+    color: theme.$primary;
+  }
+
+  .flexBox {
+    height: 100%;
+    margin-top: 20px;
+    @include theme.colFlex($align: flex-start, $gap: 20px);
+
+    .nav {
+      width: 100%;
+
+      .menuList {
+        box-sizing: border-box;
+        @include theme.rowFlex($gap: 5px, $align: flex-start);
+        @include theme.paddingY($padTop: 10px, $padBot: 10px);
+
+        .menuItem {
+          @include theme.paddingY($padTop: 5px, $padBot: 5px);
+          width: 100%;
+          color: theme.$primary;
+          font-size: theme.$fontmd;
+          font-weight: theme.$weightlg;
+          transition: color 0.2s;
+          @include theme.border($color: theme.$primary, $radius: 50px);
+
+          a {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+          }
+        }
+
+        .active {
+          color: theme.$white;
+          background-color: theme.$primary;
+        }
+
+        .menuItem:hover {
+          color: #fff;
+          background-color: rgba($color: theme.$primary, $alpha: 0.3);
+          transition: background-color 0.2s;
+        }
+
+        .active:hover {
+          color: theme.$white;
+          background-color: theme.$primary;
+        }
+
+        .prevBtn,
+        .nextBtn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          @include theme.paddingX($padL: 10px, $padR: 10px);
+          border-radius: 100%;
+          background-color: #ccc;
+          z-index: 5;
+          cursor: pointer;
+
+          img {
+            position: relative !important;
+            height: 100%;
+            width: auto;
+          }
+        }
+
+        .prevBtn {
+          img {
+            rotate: 180deg;
+          }
+        }
+
+        .nextBtn {
+          right: 0;
+        }
+      }
+    }
+
+    .contentWrapper {
+      width: 100%;
+      @include theme.padding(
+        $padTop: 20px,
+        $padBot: 20px,
+        $padL: 20px,
+        $padR: 20px
+      );
+      border-radius: 5px;
+      background-color: theme.$white;
+
+      h2 {
+        margin-bottom: 20px;
+        color: theme.$black;
+        font-size: theme.$fontxl;
+        font-weight: theme.$weightlg;
+      }
+    }
+  }
+}

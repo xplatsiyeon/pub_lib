@@ -1,9 +1,36 @@
 @use "../theme/index" as theme;
 
 .slide {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  .resetBtn {
+    position: absolute;
+    top: -59px;
+    left: 254px;
+    display: inline-block;
+    width: fit-content;
+    @include theme.padding(8px, 8px, 8px, 8px);
+    font-size: theme.$fontlg;
+    font-weight: theme.$weightlg;
+    @include theme.border(
+      $width: 2px,
+      $style: solid,
+      $color: theme.$primary,
+      $radius: 100px
+    );
+    background-color: theme.$white;
+    color: theme.$primary;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: theme.$primary;
+      color: theme.$white;
+      transition: all 0.2s;
+    }
+  }
 
   & .Box {
     display: flex;

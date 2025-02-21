@@ -1,12 +1,14 @@
 "use client";
 
 import classes from "./Animation.module.scss";
+import Image from "next/image";
 import Slide from "@/component/pages/animation/Slide";
 import Fade from "@/component/pages/animation/Fade";
 import Rotate from "@/component/pages/animation/Rotate";
 
+import refreshIcon from "/public/icons/refreshIcon.png";
+
 export default function Animation() {
-  const handleReload = () => {};
   return (
     <div className={classes.aniWrapper}>
       <article id="slide">

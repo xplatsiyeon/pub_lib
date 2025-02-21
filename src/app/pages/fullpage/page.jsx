@@ -15,6 +15,7 @@ const pages = [
 export default function Full() {
   const outerRef = useRef();
   const [currentPage, setCurrentPage] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,9 @@ export default function Full() {
 
     const wheelHandler = (e) => {
       e.preventDefault();
+      if (isScrolling) return; // 이미 스크롤 중이면 무시
+
+      setIsScrolling(true); // 스크롤 중임을 표시
       const { deltaY } = e;
       const { scrollTop, clientHeight } = outerRef.current;
 
@@ -45,6 +49,10 @@ export default function Full() {
         left: 0,
         behavior: "smooth",
       });
+
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 2000);
     };
 
     const outerRefCurrent = outerRef.current;
@@ -55,7 +63,7 @@ export default function Full() {
       outerRefCurrent.removeEventListener("wheel", wheelHandler);
       outerRefCurrent.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isScrolling]);
 
   const handleNavigationClick = (pageIndex) => {
     const pageHeight = outerRef.current.clientHeight;

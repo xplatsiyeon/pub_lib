@@ -1,5 +1,5 @@
 @use "../../theme/index" as theme;
 
 .pagesWrapper {
-  @include theme.colFlex($align: inherit, $gap: 20px);
+  @include theme.colFlex($align: inherit, $gap: 28px);
 }

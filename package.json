@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.4",
+    "next": "^15.1.7",
     "react": "^18",
     "react-dom": "^18",
+    "react-responsive": "^10.0.0",
     "react-router-dom": "^6.24.1",
     "sass": "^1.77.6",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "use-router": "^0.4.2"
   },
   "devDependencies": {
     "eslint": "^8",
