@@ -1,0 +1,63 @@
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .navItem {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .menuItem {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-left: 8px;
+      cursor: pointer;
+
+      img {
+        transition: transform 0.3s ease;
+      }
+
+      &.open {
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .subMenu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 16px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0s;
+    }
+
+    .subMenuOpen {
+      margin-top: 14px;
+      max-height: 500px;
+      transition: max-height 0.3s;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navList {
+    .navItem {
+      .menuItem {
+        font-size: 16px;
+      }
+    }
+  }
+}

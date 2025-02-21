@@ -1,12 +1,17 @@
-import Image from "next/image";
+"use client";
+
 import classes from "./ShopHeader.module.scss";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
+import Link from "next/link";
+import MenuItems from "./elements/MenuItems";
+import MobileMenu from "./elements/MobileMenu";
 
 import logo from "/public/XPLAT_logo.svg";
 import cart from "/public/icons/cart.png";
 import search from "/public/icons/search.png";
-import myshop from "/public/icons/myshop.svg";
-import Link from "next/link";
-import MenuItems from "./elements/MenuItems";
+import myshop from "/public/icons/myshop.png";
 
 const MENU_ITEMS = [
   {
@@ -40,52 +45,23 @@ const MENU_ITEMS = [
 ];
 
 export default function Header() {
+  const mobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(mobile);
+  }, [mobile]);
+
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
+        {isMobile ? <MobileMenu /> : <MenuItems menus={MENU_ITEMS} />}
         <a className={classes.logo} href="/">
           <Image src={logo} alt="로고" />
         </a>
-        {/* <ul className={classes.navList}>
-          <li className={classes.navItem}>
-            <a className={classes.menuItem} href="/pages">
-              Shop
-            </a>
-            <ul className={classes.subMenu}>
-              <li>
-                <a href="#">menu1</a>
-              </li>
-              <li>
-                <a href="#">menu2</a>
-              </li>
-              <li>
-                <a href="#">menu3</a>
-              </li>
-            </ul>
-          </li>
-          <li className={classes.navItem}>
-            <a className={classes.menuItem} href="/components">
-              About
-            </a>
-          </li>
-          <li className={classes.navItem}>
-            <a className={classes.menuItem} href="/components">
-              Community
-            </a>
-            <ul className={classes.subMenu}>
-              <li>
-                <a href="#">Notice</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
-              </li>
-              <li>
-                <a href="#">Q&A</a>
-              </li>
-            </ul>
-          </li>
-        </ul> */}
-        <MenuItems menus={MENU_ITEMS} />
         <div className={classes.member}>
           <Link href="#" className={classes.search}>
             <Image src={search} alt="검색 아이콘" />

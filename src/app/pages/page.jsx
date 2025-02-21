@@ -15,7 +15,7 @@ export default function Pages() {
       </article>
       <Header />
       <article>
-        <h2 className={classes.heading}>E-commerce 헤더</h2>
+        <h2 className={classes.heading}>E-commerce 헤더(반응형)</h2>
         <ShopHeader />
       </article>
       <article>
